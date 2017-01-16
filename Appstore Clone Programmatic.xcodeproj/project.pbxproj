@@ -12,6 +12,8 @@
 		E06EACE21E2975A600D9A9D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06EACE01E2975A600D9A9D1 /* Main.storyboard */; };
 		E06EACE41E2975A600D9A9D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06EACE31E2975A600D9A9D1 /* Assets.xcassets */; };
 		E06EACE71E2975A600D9A9D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06EACE51E2975A600D9A9D1 /* LaunchScreen.storyboard */; };
+		E06EACEF1E29BE8900D9A9D1 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06EACEE1E29BE8900D9A9D1 /* CategoryCell.swift */; };
+		E06EACF11E2AAAE800D9A9D1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06EACF01E2AAAE800D9A9D1 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E06EACE31E2975A600D9A9D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E06EACE61E2975A600D9A9D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E06EACE81E2975A600D9A9D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E06EACEE1E29BE8900D9A9D1 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		E06EACF01E2AAAE800D9A9D1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				E06EACE31E2975A600D9A9D1 /* Assets.xcassets */,
 				E06EACE51E2975A600D9A9D1 /* LaunchScreen.storyboard */,
 				E06EACE81E2975A600D9A9D1 /* Info.plist */,
+				E06EACEE1E29BE8900D9A9D1 /* CategoryCell.swift */,
+				E06EACF01E2AAAE800D9A9D1 /* Models.swift */,
 			);
 			path = "Appstore Clone Programmatic";
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				E06EACDF1E2975A600D9A9D1 /* ViewController.swift in Sources */,
 				E06EACDD1E2975A600D9A9D1 /* AppDelegate.swift in Sources */,
+				E06EACEF1E29BE8900D9A9D1 /* CategoryCell.swift in Sources */,
+				E06EACF11E2AAAE800D9A9D1 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

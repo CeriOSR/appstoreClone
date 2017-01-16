@@ -15,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //replacing the storyboard
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        //setting up the collectionViewLayout
+        let layout = UICollectionViewFlowLayout()
+        let featuredAppController = FeaturedAppsController(collectionViewLayout: layout)
+        
+        //setting up the rootViewController for the app, basically the first VC
+        window?.rootViewController = UINavigationController(rootViewController: featuredAppController)
         return true
     }
 

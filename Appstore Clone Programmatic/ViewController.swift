@@ -51,16 +51,50 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largeCellId, for: indexPath) as! LargeCategoryCell
             
             cell.appCategory = appCategories?[indexPath.item]
-            
+            //need to set featuredAppController to self so it doesnt return a nil
+            cell.featuredAppsController = self
+
+            return cell
+
+        } else {
+        
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
+            cell.appCategory = appCategories?[indexPath.item]
+            //need to set featuredAppController to self so it doesnt return a nil
+            cell.featuredAppsController = self
             return cell
 
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
-        cell.appCategory = appCategories?[indexPath.item]
         
-        return cell
+
     }
+    
+//    func regularOrBannerCell(indexPath: NSIndexPath) {
+//        
+//        let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: largeCellId, for: indexPath as IndexPath)
+//
+//        
+//        //fix the redundant code in cellForItemAtIndexPath into this func
+//        //returning a different type of cell on the 3rd row
+//        if indexPath.item == 2{
+//            cell as! LargeCategoryCell
+//            
+//            
+////            return cell
+//            
+//        }else{
+//        
+////        let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath as IndexPath) as! CategoryCell
+//            cell as! CategoryCell
+//        }
+//        cell.appCategory = appCategories?[indexPath.item]
+//        //set it to self here too for banners
+//        cell.featuredAppsController = self
+//        
+//        return cell
+//        
+//    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = appCategories?.count else {return 0}
@@ -92,6 +126,20 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
         header.appCategory = featuredApps?.bannerCategory
         
         return header
+        
+    }
+    
+        
+    func showAppDetailForApp(app: App) {
+        
+        //CVs always needs a layout
+        let layout = UICollectionViewFlowLayout()
+        //push a new view controller, layout declared as parameter
+        let appDetailController = AppDetailController(collectionViewLayout: layout)
+        //pass the data via MVC, set the values of app to appDetailController.app to trigger the didSet{}
+        appDetailController.app = app
+        navigationController?.pushViewController(appDetailController, animated: true)
+
         
     }
 }

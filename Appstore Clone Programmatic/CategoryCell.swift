@@ -10,6 +10,9 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    //access to methods in FeaturedAppsController
+    var featuredAppsController: FeaturedAppsController?
+    
     //reference to the cell.heroCategory use to fill out the Category CollectionView
     var appCategory: AppCategory? {
         didSet{
@@ -112,6 +115,14 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         //14 pixels on the left and 14 on the right
         return UIEdgeInsetsMake(0, 14, 0, 14)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        if let app = appCategory?.apps?[indexPath.item]{
+            featuredAppsController?.showAppDetailForApp(app: app)
+            
+        }
     }
     
 }

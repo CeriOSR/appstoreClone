@@ -132,7 +132,7 @@ class AppCategory: NSObject {
         //append the hero into the [Hero]
         allWarriorsCategory.append(glaiveHero)
         
-        //assigning [allWarriorsCategory] into the hero parameter of HeroCategory class
+        //assigning [allWarriorsCategory] into the hero parameter of AppCategory class
         warriorCategory.apps = allWarriorsCategory
         
         
@@ -149,4 +149,17 @@ class App: NSObject {
     var category: String?
     var imageName: String?
     var price: NSNumber?
+    
+    var screenshots: [String]?
+    var desc: String?
+    var appInformation: AnyObject?
+    
+    //desc will crash because description is a keyword for String and the name collides so we override the setValue
+    override func setValue(_ value: Any?, forKey key: String) {
+        if key == "description" {
+            self.desc = value as? String
+        }else{
+            super.setValue(value, forKey: key)
+        }
+    }
 }
